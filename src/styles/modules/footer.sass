@@ -1,0 +1,56 @@
+.footer
+	margin-top: 100px
+	padding-bottom: 50px
+	background-color: #fff
+
+	@media only screen and (min-width : $screen-xl)
+		padding-top: 50px
+		border-top: 2px solid #E2E2E2
+
+	.container
+		position: relative
+		padding-top: 52px
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column-reverse
+		align-items: center
+
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: $grid-gutter-width-xs/2
+			right: $grid-gutter-width-xs/2
+			display: block
+			height: 2px
+			background-color: #E2E2E2
+
+			@media only screen and (min-width : $screen-lg)
+				left: $grid-gutter-width/2
+				right: $grid-gutter-width/2
+
+		@media only screen and (min-width : $screen-md)
+			flex-direction: row
+
+		@media only screen and (min-width : $screen-xl)
+			padding-top: 0
+
+			&::before
+				display: none
+
+	.logo
+		width: 100%
+		max-width: 375px
+
+	.social
+		display: flex
+		width: 100%
+		margin: 0 0 50px
+		justify-content: space-between
+
+		@media only screen and (min-width : $screen-md)
+			width: auto
+			justify-content: flex-start
+			margin-bottom: 0
+			margin-left: 40px
+		

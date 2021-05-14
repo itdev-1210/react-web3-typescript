@@ -1,0 +1,136 @@
+.hero-slider-wrapper
+	z-index: 4
+
+/* preloader */
+.slider--preload
+	> div:first-child
+		opacity: 0
+		margin-left: auto
+		margin-right: auto
+
+	> div:nth-child(n+2)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		opacity: 0
+
+	& + .hero__arrows
+		opacity: 0
+
+	.hero-slider-wrapper
+		> div:first-child
+			opacity: 1
+			transition: opacity 1s
+
+// arrows
+.slider-button-prev
+	position: absolute
+	top: 50%
+	left: 10px
+	z-index: 10
+	display: block
+	width: 40px
+	height: 40px
+	margin-left: $grid-gutter-width-xs/2
+	margin-top: -20px
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 30L15 20L25 10' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+	background-size: cover
+
+	@media only screen and (min-width : $screen-md)
+		left: 20px
+
+	@media only screen and (min-width : $screen-lg)
+		left: 30px
+		margin-left: $grid-gutter-width/2
+
+	@media only screen and (min-width : $screen-xl)
+		left: (150/1920)*100%
+
+	@media only screen and (min-width : $screen-hd)
+		left: 50%
+		margin-left: -(1620px/2)
+
+.slider-button-next
+	position: absolute
+	top: 50%
+	right: 10px
+	z-index: 10
+	display: block
+	width: 40px
+	height: 40px
+	margin-top: -20px
+	margin-right: $grid-gutter-width-xs/2
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 30L25 20L15 10' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+	background-size: cover
+
+	@media only screen and (min-width : $screen-md)
+		right: 20px
+
+	@media only screen and (min-width : $screen-lg)
+		right: 30px
+		margin-right: $grid-gutter-width/2
+
+	@media only screen and (min-width : $screen-xl)
+		right: (150/1920)*100%
+
+	@media only screen and (min-width : $screen-hd)
+		right: 50%
+		margin-right: -(1620px/2)
+
+// pagination
+.slick-pagination
+	display: none
+
+	@media only screen and (min-width : $screen-lg)
+		display: block
+
+.slick-dots
+	position: absolute
+	right: 0
+	left: 0
+	bottom: 40px
+	z-index: 5
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+	width: max-content
+	margin: 0 auto
+	padding: 0
+	list-style: none
+
+	li
+		margin: 0 2px
+		line-height: 0
+
+	button
+		position: relative
+		width: 10px
+		height: 10px
+		padding: 2px
+		font-size: 0
+		line-height: 0
+		text-indent: -9999px
+		overflow: hidden
+
+		&::before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			display: block
+			width: 6px
+			height: 6px
+			background-color: #fff
+			border-radius: 50%
+			opacity: 0.2
+			transition: all .2s
+			transform: translate(-50%, -50%)
+
+.slick-active
+	button
+		&::before
+			width: 10px
+			height: 10px
+			opacity: 1

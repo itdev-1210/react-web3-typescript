@@ -1,0 +1,206 @@
+// catalog settings
+.catalog-settings
+	display: flex
+	flex-wrap: wrap
+
+	.btn--black
+		margin-bottom: 2rem
+
+		@media only screen and (min-width : $screen-md)
+			margin-bottom: 0
+			flex: 0 0 calc(50% - 80px)
+			max-width: calc(50% - 80px)
+			margin-right: 15px
+
+		@media only screen and (min-width : $screen-lg)
+			flex: 0 0 35%
+			max-width: 35%
+			margin-right: auto
+
+	.ps
+		flex: 0 0 calc(100% - 145px)
+		max-width: calc(100% - 145px)
+		margin-right: 15px
+
+		@media only screen and (min-width : $screen-md)
+			margin-bottom: 0
+			flex: 0 0 calc(50% - 80px)
+			max-width: calc(50% - 80px)
+			margin-right: 15px
+
+		@media only screen and (min-width : $screen-lg)
+			flex: 0 0 35%
+			max-width: 35%
+			margin-left: 15px
+
+	.ps-options
+		right: -145px
+
+	@media only screen and (min-width : $screen-xl)
+		padding-bottom: 2px
+
+		.btn-stake
+			display: none
+		.ps
+			flex: 1
+			max-width: none
+
+		.ps-options
+			right: 0
+
+.ps
+	position: relative
+
+	&__label
+		display: none
+
+	@media only screen and (min-width : $screen-xl)
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		margin-right: 0
+
+		&__label
+			display: block
+			font-size: 14px
+			line-height: 1.185em
+			text-transform: uppercase
+
+.ps-value
+	position: relative
+	min-height: 32px
+	padding: 16px 32px 14px 4px
+	font-size: 18px
+	font-weight: 500
+	line-height: 1.185em
+	text-transform: capitalize
+	border-bottom: 1px solid #6A5A55
+	cursor: pointer
+
+	span
+
+	&__icon
+		position: absolute
+		top: 50%
+		right: 4px
+		display: block
+		width: 24px
+		height: 24px
+		margin-top: -12px
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%2362514B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		background-size: cover
+
+	&__space
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 5
+		display: block
+
+	@media only screen and (min-width : $screen-xl)
+		display: none
+
+.ps-options
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	z-index: -4
+	margin: -10px 0 0
+	padding: 20px
+	list-style: none
+	background-color: #FFF
+	box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)
+	opacity: 0
+	visibility: hidden
+	transition: margin-top .2s, opacity .2s
+
+	.ps.active > &
+		z-index: 11
+		margin-top: 0
+		opacity: 1
+		visibility: visible
+
+	@media only screen and (min-width : $screen-xl)
+		position: static
+		z-index: 1
+		display: flex
+		flex-wrap: wrap
+		margin: 0
+		padding: 0
+		background-color: transparent
+		box-shadow: none
+		opacity: 1
+		visibility: visible
+
+	li
+		position: relative
+		margin: 8px 0
+		padding: 4px
+		padding-left: 36px
+		font-size: 14px
+		line-height: 1.185em
+		text-transform: uppercase
+		cursor: pointer
+		transition: color .2s
+
+		&::before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 4px
+			display: block
+			width: 16px
+			height: 16px
+			margin-top: -8px
+			background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3333 4L5.99996 11.3333L2.66663 8' stroke='%23E4536D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+			background-size: cover
+			opacity: 0
+			visibility: hidden
+			transition: opacity .2s
+
+		&:hover,
+		&.ps-selected
+			color: #E4536D
+
+			&::before
+				opacity: 1
+				visibility: visible
+
+		@media only screen and (min-width : $screen-xl)
+			margin: 0 0 0 12px
+			padding: 8px 12px
+			background-color: #F5F5F5
+			border: 1px solid #F5F5F5
+
+			&::before
+				display: none
+
+			&.ps-selected
+				background-color: #fff
+				border-color: #E4536D
+
+
+// catalog list
+.catalog-list
+	display: flex
+	flex-wrap: wrap
+	margin-top: 32px
+	margin-left: -$grid-gutter-width-xs/2
+	margin-right: -$grid-gutter-width-xs/2
+
+	@media only screen and (min-width : $screen-lg)
+		margin-left: -$grid-gutter-width/2
+		margin-right: -$grid-gutter-width/2
+
+	&__item
+		@include make-col(1, 1)
+		margin-bottom: 30px
+
+		@media only screen and (min-width : $screen-md)
+			@include make-col(1, 2)
+
+		@media only screen and (min-width : 1520px)
+			@include make-col(1, 3)

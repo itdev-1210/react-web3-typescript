@@ -1,0 +1,61 @@
+//@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Original include File
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/deprecate";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/mixins/grid-framework";
+@import "bootstrap/scss/mixins/grid";
+
+
+// Row
+//
+// Rows contain your columns.
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}
+
+%grid-column {
+  padding-left: $grid-gutter-width-xs/2;
+  padding-right: $grid-gutter-width-xs/2;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: $grid-gutter-width/2;
+    padding-right: $grid-gutter-width/2;
+  }
+}
+.row {
+  margin-left: -$grid-gutter-width-xs/2;
+  margin-right: -$grid-gutter-width-xs/2;
+    
+  @include media-breakpoint-up(lg) {
+    margin-left: -$grid-gutter-width/2;
+    margin-right: -$grid-gutter-width/2;
+  }
+}
+
+@import "node_modules/bootstrap/scss/utilities/display";
+@import "node_modules/bootstrap/scss/utilities/flex";
+@import "node_modules/bootstrap/scss/utilities/spacing";

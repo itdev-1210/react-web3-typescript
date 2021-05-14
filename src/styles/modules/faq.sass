@@ -1,0 +1,70 @@
+.faq
+	.section-title
+		margin-bottom: 32px
+
+	@media only screen and (min-width : $screen-xl)
+		.row
+			margin-left: -($grid-gutter-width-xs/2 + 10px)
+			margin-right: -($grid-gutter-width-xs/2 + 10px)
+
+		%grid-column
+			padding-left: $grid-gutter-width/2 + 10px
+			padding-right: $grid-gutter-width/2 + 10px
+
+.faq-item
+	position: relative
+	align-self: flex-start
+	margin-bottom: 15px
+	padding-bottom: 17px
+
+	&::after
+		content: ''
+		position: absolute
+		left: $grid-gutter-width-xs/2
+		right: $grid-gutter-width-xs/2
+		bottom: 0
+		display: block
+		height: 2px
+		background-color: #F5F5F5
+
+		@media only screen and (min-width : $screen-lg)
+			left: $grid-gutter-width/2
+			right: $grid-gutter-width/2
+
+		@media only screen and (min-width : $screen-xl)
+			left: $grid-gutter-width/2 + 10px
+			right: $grid-gutter-width/2 + 10px
+
+	&:last-child::after
+		display: none
+
+	@media only screen and (min-width : $screen-md)
+		margin-bottom: 24px
+		padding-bottom: 26px
+
+		&:nth-last-child(-n+2)::after
+			display: none
+
+	&__header
+		position: relative
+		min-height: 24px
+		margin-bottom: 0
+		padding-right: 28px
+		cursor: pointer
+
+		.faq-detail
+			position: absolute
+			top: 0
+			right: 0
+			display: block
+			width: 24px
+			height: 24px
+			background-position: 0 0
+			background-repeat: no-repeat
+			background-size: contain
+		.show
+			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 5V19' stroke='%23E4536D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5 12H19' stroke='%23E4536D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+		.hide
+			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12H19' stroke='%23E4536D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+	&__content
+		margin-top: 12px

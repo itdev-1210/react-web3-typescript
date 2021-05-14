@@ -1,0 +1,72 @@
+.container
+	margin-right: 10px
+	margin-left: 10px
+	padding-right: $grid-gutter-width-xs/2
+	padding-left: $grid-gutter-width-xs/2
+
+	@media only screen and (min-width : $screen-md)
+		margin-right: 20px
+		margin-left: 20px
+
+		&--small
+			margin-left: 50px
+			margin-right: 50px
+
+	@media only screen and (min-width : $screen-lg)
+		margin-right: 30px
+		margin-left: 30px
+		padding-right: $grid-gutter-width/2
+		padding-left: $grid-gutter-width/2
+
+		&--small
+			margin-left: 70px
+			margin-right: 70px
+
+	@media only screen and (min-width : $screen-xl)
+		margin-right: (150/1920)*100%
+		margin-left: (150/1920)*100%
+
+		&--small
+			margin-right: (285/1920)*100%
+			margin-left: (285/1920)*100%
+
+	@media only screen and (min-width : $screen-hd)
+		max-width: 1620px
+		margin-left: auto
+		margin-right: auto
+
+		&--small
+			max-width: 1350px
+			margin-left: auto
+			margin-right: auto
+
+.section
+	position: relative
+	margin-top: 32px
+	margin-bottom: 32px
+
+	@media only screen and (min-width : $screen-xl)
+		margin-top: 100px
+		margin-bottom: 100px
+
+.content
+	margin-top: 50px
+	margin-bottom: 50px
+
+	@media only screen and (min-width : $screen-xl)
+		margin-top: 100px
+		margin-bottom: 100px
+
+.content--home
+	p
+		max-width: 590px
+
+.col-xl-special-4
+	@media only screen and (min-width : $screen-xl)
+		flex: 0 0 40%
+		max-width: 40%
+
+.col-xl-special-6
+	@media only screen and (min-width : $screen-xl)
+		flex: 0 0 60%
+		max-width: 60%

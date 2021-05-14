@@ -1,0 +1,245 @@
+@import 'modules/_variables'
+@import 'bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'modules/_grid' // Import Optional Bootstrap Grid without Container
+@import 'modules/container' // Custom Container
+@import 'modules/_fonts' // Fonts
+
+// GENERAL DOCUMENT STYLES
+*,
+*:after,
+*:before
+	outline: none
+
+::placeholder
+	color: $placeholder-color
+
+::selection
+	background-color: $selection-color
+	color: $default-color	
+
+input, textarea
+	appearance: none
+
+	&:focus:required:invalid
+		border-color: $danger-color
+	&:required:valid
+		border-color: $success-color
+
+button
+	cursor: pointer
+
+button,
+input,
+textarea
+	padding: 0
+	font-size: inherit
+	font-family: inherit
+	line-height: 1.5
+	background-color: transparent
+	border: none
+
+body
+	position: relative
+	width: 100%
+	min-width: 320px
+	color: $color-text
+	font-size: $font-size
+	font-family: $font
+	line-height: 1.5
+	-webkit-font-smoothing: antialiased
+	overflow-x: hidden
+	background: url('../assets/Images/bg__xs.png') 100% 0 no-repeat
+	background-size: 100% auto
+
+	&.no-bg
+		background-image: none
+
+		&::after,
+		&::before
+			display: none
+
+	@media only screen and (min-width : $screen-md)
+		background-image: url('../assets/Images/bg__md.png')
+
+	@media only screen and (min-width : $screen-lg)
+		background-image: none
+
+		&::before
+			content: ''
+			position: absolute
+			top: 151px
+			right: 0
+			z-index: -1
+			display: block
+			width: (1224/1920)*100vw
+			height: (1292/1920)*100vw
+			background: url('../assets/Images/bg__right-top.png') 0 0 no-repeat
+			background-size: cover
+
+			@media only screen and (min-width : $screen-hd)
+				width: 1224px
+				height: 1292px
+
+		&::after
+			content: ''
+			position: absolute
+			top: (1651/1920)*100vw
+			left: 0
+			z-index: -1
+			display: block
+			width: (857/1920)*100vw
+			height: (1784/1920)*100vw
+			background: url('../assets/Images/bg__left-middle.png') 0 0 no-repeat
+			background-size: cover
+
+			@media only screen and (min-width : $screen-hd)
+				top: 1651px
+				width: 857px
+				height: 1784px
+
+	> *
+		z-index: 2
+
+.btn
+	width: 240px
+	padding: 18px 20px
+	color: $default-color
+	text-align: center
+	text-transform: uppercase
+	background-color: $primary-color
+	transition: background-color .2s, box-shadow .25s
+
+	&:hover
+		background-color: darken($primary-color, 10%)
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.34)
+
+.btn-stake
+	position: relative
+	z-index: 2
+	display: block
+	width: 100%
+	padding: 18px 20px
+	color: $default-color
+	font-size: 15px
+	font-weight: 500
+	line-height: 1.185em
+	text-align: center
+	text-transform: uppercase
+	text-decoration: none
+	white-space: nowrap
+	text-overflow: ellipsis
+	overflow: hidden
+	background-color: $primary-color
+	transition: color .2s
+
+	&:hover
+		color: $primary-color
+		text-decoration: none
+		background-color: $default-color
+
+	&:disabled
+		background-color: #aaa
+		color: grey
+		border: 1px solid #aaa
+		&:hover
+			background-color: #aaa
+			color: grey
+			border: 1px solid #aaa
+
+	&--bordered
+		border: 1px solid $primary-color
+
+.btn--outlined
+	color: $color-text
+	background-color: $default-color
+	border: 1px solid $color-text
+	transition: color .2s, border-color .2s
+
+	&:hover
+		border-color: $primary-color
+
+.btn--black
+	color: $default-color
+	background-color: $color-text
+	transition: background-color .2s
+
+	&:hover
+		color: $default-color
+		background-color: $primary-color
+
+.btn--filter
+	width: 127px
+	height: 54px
+
+	svg
+		position: relative
+		top: -1px
+		margin-right: 7px
+// import default styles for modal
+// @import 'bootstrap/scss/_modal.scss'
+@import 'modules/modal-navigation'
+@import 'modules/modal-filters'
+
+// import default styles for Slick slider
+@import 'slick-carousel/slick/slick.scss'
+@import 'modules/slider'
+
+// MODULES
+@import 'modules/main-bg'
+@import 'modules/icons'
+@import 'modules/typography'
+@import 'modules/header'
+@import 'modules/top-header'
+@import 'modules/hero'
+@import 'modules/product-card'
+@import 'modules/popular-slider'
+@import 'modules/footer'
+@import 'modules/faq'
+
+@import 'modules/components'
+@import 'modules/product-page'
+@import 'modules/stake-page'
+@import 'modules/catalog-page'
+
+// Helpers
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.svg-icon
+	display: block
+	width: 100%
+	height: 100%
+
+.hidden
+	display: none !important
+
+.text-center
+	text-align: center
+
+%clearfix
+	&:before,
+	&:after
+		content: " "
+		display: table
+
+	&:after
+		clear: both
+
+.clearfix
+	@extend %clearfix
+
+.clear
+	clear: both
+
+.space-blank
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	align-content: center
+	justify-content: center
+	min-height: 400px
+	text-align: center
+	border: 1px solid #ccc
+	box-shadow: 0 3px 10px rgba(0,0,0,.4)

@@ -1,0 +1,107 @@
+.home-page-bg
+	@media only screen and (min-width : $screen-lg)
+
+		&::before
+			content: ''
+			position: absolute
+			top: 151px
+			right: 0
+			z-index: -1
+			display: block
+			width: (1224/1920)*100vw
+			height: (1292/1920)*100vw
+			background: url('../../assets/Images/bg__right-top.png') 0 0 no-repeat
+			background-size: cover
+
+			@media only screen and (min-width : $screen-hd)
+				width: 1224px
+				height: 1292px
+
+		&::after
+			content: ''
+			position: absolute
+			top: (1651/1920)*100vw
+			left: 0
+			z-index: -1
+			display: block
+			width: (857/1920)*100vw
+			height: (1784/1920)*100vw
+			background: url('../../assets/Images/bg__left-middle.png') 0 0 no-repeat
+			background-size: cover
+
+			@media only screen and (min-width : $screen-hd)
+				top: 1651px
+				width: 857px
+				height: 1784px
+
+	> *
+		z-index: 2
+
+.product-page-bg
+	&::before
+		content: ''
+		position: absolute
+		top: 253px
+		left: -(45/1920)*100vw
+		z-index: -1
+		display: block
+		width: (571/1920)*100vw
+		height: (626/1920)*100vw
+		background-image: url("data:image/svg+xml,%3Csvg width='571' height='626' viewBox='0 0 571 626' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M95.161 250.4L0.00785875 312.998H0L95.161 250.4ZM0.00483616 438.201L95.1671 500.801V250.4L190.338 312.998L285.507 375.6L380.669 312.998L475.829 250.4V375.6L380.669 438.198L285.507 500.802V626L380.669 563.402L475.829 500.802L571 438.203V62.5981L475.829 125.198L380.669 187.801L285.507 250.4L190.338 187.801L95.1671 125.202V0L0.0139039 62.5981H0.00604519V438.201H0.00483616Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='0' y1='0' x2='695.837' y2='630.155' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E34D6F'/%3E%3Cstop offset='1' stop-color='%23E9C54C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+		background-size: cover
+
+		@media only screen and (min-width : $screen-hd)
+			left: -45px
+			width: 571px
+			height: 626px
+
+	&::after
+		content: ''
+		position: absolute
+		top: 18px
+		left: 0
+		z-index: -1
+		display: block
+		width: (825/1920)*100vw
+		height: (1380/1920)*100vw
+		background: url('../../assets/Images/product-bg.png') 0 0 no-repeat
+		background-size: cover
+
+		@media only screen and (min-width : $screen-hd)
+			width: 825px
+			height: 1380px
+	
+.stake-page-bg
+	&::before
+		content: ''
+		position: absolute
+		top: (1454/4363)*100%
+		left: -(206.23/1920)*100vw
+		z-index: -1
+		display: block
+		width: (911/1920)*100vw
+		height: (999/1920)*100vw
+		background-image: url("data:image/svg+xml,%3Csvg width='911' height='999' viewBox='0 0 911 999' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M151.328 0.927549V199.803V200.073L151.553 200.221L455.232 400.017L455.507 400.198L455.782 400.017L910.5 100.824V699.035L456.007 998.072V799.473L759.434 599.818L759.659 599.67V599.401V399.6V398.672L758.884 399.182L455.507 598.802L152.102 399.182L151.328 398.672V399.6V798.274L0.501929 699.034V100.175L151.328 0.927549Z' stroke='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='0' y1='0' x2='1110.42' y2='1005.35' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E34D6F'/%3E%3Cstop offset='1' stop-color='%23E9C54C'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+		background-size: cover
+
+		@media only screen and (min-width : $screen-hd)
+			left: -206.23px
+			width: 911px
+			height: 999px
+
+	&::after
+		content: ''
+		position: absolute
+		top: (829/4363)*100%
+		left: 0
+		z-index: -1
+		display: block
+		width: (810/1920)*100vw
+		height: (2060/1920)*100vw
+		background: url('../../assets/Images/stake-bg.png') 0 0 no-repeat
+		background-size: cover
+
+		@media only screen and (min-width : $screen-hd)
+			width: 810px
+			height: 2060px
+

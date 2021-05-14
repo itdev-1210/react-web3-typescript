@@ -1,0 +1,148 @@
+.header
+	padding-top: 20px
+	padding-bottom: 20px
+	background-color: #fff
+
+	.container
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+
+	@media only screen and (min-width : $screen-md)
+		&--bordered
+			border-bottom: 2px solid #E2E2E2
+
+.logo
+	display: block
+	// width: 215px
+	// margin-right: auto
+
+	img
+		display: block
+		width: 100%
+		height: auto
+
+	.d-desktop
+		display: block
+
+		@media only screen and (max-width : $screen-sm)
+			display: none
+
+	.d-mobile
+		display: none
+		height: 40px
+		width: 40px
+
+		@media only screen and (max-width : $screen-sm)
+			display: block
+
+	@media only screen and (min-width : $screen-xl)
+		width: 375px
+
+.navigation
+	display: none
+	margin-left: 40px
+
+	ul
+		display: flex
+		flex-wrap: wrap
+		margin: 0
+		padding: 0
+		list-style: none
+
+	li + li
+		margin-left: 51px
+
+	a
+		color: $color-text
+		font-size: 16px
+		line-height: 19px
+		font-weight: 500
+		text-transform: uppercase
+		transition: color .2s
+
+		&:hover
+			color: $color-link
+			text-decoration: none
+
+	@media only screen and (min-width : $screen-xl)
+		display: block
+
+.social
+	display: none
+	flex-wrap: wrap
+	padding: 0
+	list-style: none
+	margin-left: auto
+
+	li + li
+		margin-left: 10px
+
+	&__item
+		display: block
+		width: 36px
+		height: 36px
+		color: $color-text
+		transition: color .2s
+		&:hover
+			color: $color-link
+			text-decoration: none
+
+	@media only screen and (min-width : $screen-xl)
+		display: flex
+
+.btn-burger
+	display: block
+	width: 24px
+	height: 24px
+	margin-left: auto
+
+	@media only screen and (min-width : $screen-xl)
+		display: none
+
+.connect-btn
+	margin-left: auto
+	background: #F8F8F8
+	width: 114px
+	height: 44px
+	color: #62514B
+
+	@media only screen and (min-width : $screen-xl)
+		display: flex
+		align-items: center
+		justify-content: center
+
+.connected-wallet
+	margin-left: auto
+	background: #F8F8F8
+	cursor: pointer
+	display: flex
+	align-items: center
+	justify-content: center
+
+	div
+		padding: 12px
+		text-transform: uppercase
+		font-size: 0.6rem
+		font-weight: 500
+		line-height: 19px
+
+	.chain-name
+		padding-left: 8px
+		color: #62514B
+	
+	.address
+		background: linear-gradient(134.79deg, #E34D6F 0%, #E9C54C 111.3%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+	
+	.gradient-dot
+		padding: 0
+		margin: 8px
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		background: linear-gradient(134.79deg, #E34D6F 0%, #E9C54C 111.3%)
+
+.ReactModal__Overlay
+	z-index: 10
